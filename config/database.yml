@@ -1,7 +1,7 @@
 development:
       host: localhost
       adapter: mysql
-      database: cms_dev
+      database: supai_dev
       port: 3306
       username: root
       password: lee123
@@ -11,14 +11,14 @@ development:
 test:
       host: localhost
       adapter: mysql
-      database: cms_test
+      database: supai_test
       port: 3306
       username: root
       password: lee123
 production:
       host: localhost
       adapter: mysql
-      database: cms_dev
+      database: supai_pro
       port: 3306
       username: root
       password: lee123

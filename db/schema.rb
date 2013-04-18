@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617063906) do
+ActiveRecord::Schema.define(:version => 20130418134309) do
 
   create_table "adds", :force => true do |t|
     t.string   "name"
@@ -105,6 +105,23 @@ ActiveRecord::Schema.define(:version => 20120617063906) do
   create_table "friend_links", :force => true do |t|
     t.string   "name"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "goods", :force => true do |t|
+    t.string   "name"
+    t.string   "amount"
+    t.text     "desc"
+    t.integer  "type_id"
+    t.boolean  "is_new"
+    t.integer  "read_num"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "goods_types", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

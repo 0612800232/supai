@@ -63,11 +63,10 @@ module ApplicationHelper
   def forum_tab forum
     if forum
       if forum.father ==nil
-        return  link_to("首页","/") +  " > > "+  link_to(forum.name,"/homes/forums/#{forum.id}")
-
+        return  "<span>" + link_to("首页","/") +  " > "+  link_to(forum.name,"/homes/forums/#{forum.id}") +"</span>"
       end
       if forum.father!= nil
-        return    link_to("首页","/") +  " > >  "+  link_to(forum.father.name,"/homes/forums/#{forum.father.id}")+  ">> "+  link_to(forum.name,"/homes/forums/#{forum.id}")
+        return  "<span>" +   link_to("首页","/") +  " > "+  link_to(forum.father.name,"/homes/forums/#{forum.father.id}")+  "> "+  link_to(forum.name,"/homes/forums/#{forum.id}") +"</span>"
       end
     else
        return    link_to("首页","/") 

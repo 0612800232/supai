@@ -1,6 +1,13 @@
 Huanhao::Application.routes.draw do
 
 
+  resources :goods do
+     collection do
+        post :add_new
+      end
+  end
+  resources :goods_types
+
   resources :images_indices
 
   resources :question_result_details

@@ -99,15 +99,19 @@ class ArticlesController < ApplicationController
   def add_index
 
        params[:no_select_id].each do |id|
+         if id!=nil and id !=""
         article = Article.find(id)
         article.is_index =false 
         article.save
+         end
       end
 
       params[:select_id].each do |id|
+         if id!=nil and id !=""
         article = Article.find(id)
         article.is_index =true 
         article.save
+          end
       end if params[:select_id]
       respond_to do |format|
         format.html { redirect_to(articles_url) }

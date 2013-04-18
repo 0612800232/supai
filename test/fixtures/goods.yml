@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  amount: MyString
+  desc: MyText
+  type_id: 1
+  is_new: false
+  read_num: 1
+
+two:
+  name: MyString
+  amount: MyString
+  desc: MyText
+  type_id: 1
+  is_new: false
+  read_num: 1
