@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418134309) do
+ActiveRecord::Schema.define(:version => 20130420072559) do
 
   create_table "adds", :force => true do |t|
     t.string   "name"
@@ -113,15 +113,27 @@ ActiveRecord::Schema.define(:version => 20130418134309) do
     t.string   "name"
     t.string   "amount"
     t.text     "desc"
-    t.integer  "type_id"
+    t.integer  "goods_type_id"
     t.boolean  "is_new"
     t.integer  "read_num"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "goods_url"
+    t.string   "goods_index_url"
   end
 
   create_table "goods_types", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images_indices", :force => true do |t|
+    t.string   "title"
+    t.string   "small_img"
+    t.string   "img"
+    t.string   "link"
+    t.string   "taget"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -44,12 +44,13 @@ class ImagesIndicesController < ApplicationController
     @images_index = ImagesIndex.new(params[:images_index])
 
     respond_to do |format|
-        if  @images_index.id!= nil and  @images_index.id!= ""
-          ImagesIndex.update @images_index
-        else
-          ImagesIndex.add @images_index
-        end
-        format.html { redirect_to("/images_indices", :notice => 'Images index was successfully created.') }
+        if @images_index.save
+        format.html { redirect_to("/images_indices", :notice => 'images_index was successfully created.') }
+        format.xml  { render :xml => @images_index, :status => :created, :location => @images_index }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @article.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

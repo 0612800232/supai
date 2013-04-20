@@ -8,6 +8,7 @@ class CreateGoods < ActiveRecord::Migration
       t.boolean :is_new
       t.integer :read_num
       t.string  :goods_url
+       t.string  :goods_index_url
       t.timestamps
     end
   end

@@ -17,6 +17,18 @@
             });
           });
         });
+        
+         K('#good_index_url_image').click(function() {
+          editor.loadPlugin('image', function() {
+            editor.plugin.imageDialog({
+              imageUrl : K('#goods_index_url').val(),
+              clickFn : function(url, title, width, height, border, align) {
+                K('#goods_index_url').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
 
              
 
@@ -64,6 +76,13 @@
         </p>
          <p><%if @good.goods_url %>
           <%= image_tag( @good.goods_url,:width=>100)%>
+          <%end%>
+        </p>
+         <p>
+          <input type="text" id="goods_index_url" value="<%=@good.goods_index_url%>" name="good[goods_index_url]"/> <input type="button" id="good_index_url_image" value="选择产品主页图片" />
+        </p>
+         <p><%if @good.goods_index_url %>
+          <%= image_tag( @good.goods_index_url,:width=>100)%>
           <%end%>
         </p>
           <p class="box"><input type="submit" class="btn btn-green big" value="提交"/>

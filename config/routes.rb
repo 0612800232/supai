@@ -1,6 +1,8 @@
 Huanhao::Application.routes.draw do
 
 
+  resources :images_indices
+
   resources :goods do
      collection do
         post :add_new
