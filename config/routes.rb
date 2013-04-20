@@ -66,11 +66,18 @@ match '/homes/forums/:id/',
   :requirements => {:id=>/\d+/},  
   :id => nil  
 
+  match '/homes/goods/:id/',  
+  :controller => 'homes',  
+  :action => 'goods',  
+  :requirements => {:id=>/\d+/},  
+  :id => nil  
+
   resources :events
   resources :homes do
       collection do
         get :apply
         get :forums
+        get :goods
         get :articles
         get :read
       end

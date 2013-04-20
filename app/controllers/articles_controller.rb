@@ -9,7 +9,8 @@ class ArticlesController < ApplicationController
     @articles = @articles.paginate :page => params[:page]||1,
                             :per_page=>10,
                             :order => 'created_at DESC'
-                          
+                  
+   
   end
 
   # GET /articles/1

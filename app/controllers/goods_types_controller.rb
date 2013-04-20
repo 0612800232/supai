@@ -46,7 +46,7 @@ class GoodsTypesController < ApplicationController
 
     respond_to do |format|
       if @goods_type.save
-        format.html { redirect_to("/goods_types", :notice => 'Goods type was successfully created.') }
+        format.html { redirect_to(goods_url, :notice => 'Goods type was successfully created.') }
         format.xml  { render :xml => @goods_type, :status => :created, :location => @goods_type }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class GoodsTypesController < ApplicationController
 
     respond_to do |format|
       if @goods_type.update_attributes(params[:goods_type])
-        format.html { redirect_to(@goods_type, :notice => 'Goods type was successfully updated.') }
+        format.html { redirect_to(goods_url, :notice => 'Goods type was successfully created.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

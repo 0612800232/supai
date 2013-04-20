@@ -1,4 +1,30 @@
-﻿<div id="page" >
+<%= javascript_include_tag "prototype" %>﻿
+    <script>
+      KindEditor.ready(function(K) {
+        var editor = K.editor({
+          allowFileManager : true, 
+          uploadJson : '/kindeditor/upload',
+          fileManagerJson : '/kindeditor/images_list'
+        });
+        K('#good_url_image').click(function() {
+          editor.loadPlugin('image', function() {
+            editor.plugin.imageDialog({
+              imageUrl : K('#goods_url').val(),
+              clickFn : function(url, title, width, height, border, align) {
+                K('#goods_url').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+
+             
+
+
+      });
+    </script>
+
+<div id="page" >
   <!-- Wrapper -->
   <div class="wrapper">
     <!-- Left column/section -->
@@ -33,7 +59,13 @@
              <%= select( :good,:goods_type_id, GoodsType.find(:all).collect {|p| [ p.name, p.id ] }) %>
           </p>
            <p><%= f.input :is_new ,:label =>"是否设置为新品"%></p>
-         
+          <p>
+          <input type="text" id="goods_url" value="<%=@good.goods_url%>" name="good[goods_url]"/> <input type="button" id="good_url_image" value="选择产品图片" />
+        </p>
+         <p><%if @good.goods_url %>
+          <%= image_tag( @good.goods_url,:width=>100)%>
+          <%end%>
+        </p>
           <p class="box"><input type="submit" class="btn btn-green big" value="提交"/>
             or
             <input type="reset" class="btn" value="重置"/></p>

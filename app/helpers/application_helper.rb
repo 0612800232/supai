@@ -99,7 +99,7 @@ end
         
       if request.parameters[:action] == "index"
          @temp_body =  PageTemp.find_by_temp_type_and_is_acticity("主页",true)
-      elsif  request.parameters[:action] == "forums"
+      elsif  request.parameters[:action] == "forums" or request.parameters[:action] == "goods"
           @temp_body = @forum.page_temp
          @temp_body =  PageTemp.find_by_temp_type_and_is_acticity("栏目",true) if  @temp_body==nil
       elsif  request.parameters[:action] == "articles"

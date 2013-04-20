@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class HomesController < ApplicationController 
-   caches_page :index, :forums,:articles
+   caches_page :index, :forums,:articles,:goods
   before_filter :get_head
   layout "home"
 
@@ -27,17 +27,23 @@ class HomesController < ApplicationController
                             :per_page=>10,
                             :order=>"id asc"
   end
-
-  def articles
-    @article = Article.find(params[:id])
-    @forum = @article.forum ? @article.forum : @article.father_forum
-    if @article.read_num
-    @article.read_num +=1
-    else
-      @article.read_num = 0
-    end
-    @article.save
+  
+   def forums
+    @forum = Forum.find(params[:id])
+    articles = @forum.articles_father.length >0 ? @forum.articles_father : @forum.articles
+    @articles = articles.paginate :page => params[:page]||1,
+                            :per_page=>10,
+                            :order=>"id asc" if params[:page].class == Fixnum
   end
+
+  def goods
+     @forum = Forum.find_by_code("pro_info")
+   render "forums"
+  end
+  
+  
+  
+  
 
 
     def courses

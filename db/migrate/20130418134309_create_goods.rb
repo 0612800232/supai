@@ -7,7 +7,7 @@ class CreateGoods < ActiveRecord::Migration
       t.integer :goods_type_id
       t.boolean :is_new
       t.integer :read_num
-
+      t.string  :goods_url
       t.timestamps
     end
   end
