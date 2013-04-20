@@ -74,6 +74,12 @@ match '/homes/forums/:id/',
   :requirements => {:id=>/\d+/},  
   :id => nil  
 
+  match '/homes/goods/:id/:page',  
+  :controller => 'homes',  
+  :action => 'goods',  
+  :requirements => {:id=>/\d+/,:page => /\d+/},  
+  :page => nil ,
+  :id => nil  
   resources :events
   resources :homes do
       collection do
