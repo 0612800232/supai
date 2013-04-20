@@ -41,9 +41,13 @@ class PaginationDetailLinkRenderer < WillPaginate::ViewHelpers::LinkRenderer
 
        if controller_name == "homes"   #到了我们要自定义的action了
 
-           #if action_name == "forums"
+           if action_name == "forums"
                return "/homes/forums/#{params[:id]}/#{page}"
-           #end
+           end
+           
+        if action_name == "goods"
+               return "/homes/goods/#{params[:id]}/#{page}"
+           end
        else
           super(page) #调用WillPaginate的默认生成的url
       end
