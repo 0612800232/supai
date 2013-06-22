@@ -34,7 +34,7 @@ def articles
    def forums
     @forum = Forum.find(params[:id])
     articles = @forum.articles_father.length >0 ? @forum.articles_father : @forum.articles
-    @articles = articles.paginate :page => params[:page]||1,
+   @forum.articles_father = articles.paginate :page => params[:page]||1,
                             :per_page=>10,
                             :order=>"id asc" if params[:page].class == Fixnum
   end
