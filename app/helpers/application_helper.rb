@@ -105,6 +105,8 @@ end
       elsif  request.parameters[:action] == "articles"
         @temp_body = @article.page_temp
          @temp_body =  PageTemp.find_by_temp_type_and_is_acticity("文章",true)  if  @temp_body==nil
+       elsif  request.parameters[:action] == "good"
+        @temp_body = PageTemp.find_by_temp_type_and_is_acticity("产品",true)
       elsif  request.parameters[:action] == "courses"
         @temp_body = @course.page_temp
         @temp_body =  PageTemp.find_by_temp_type_and_is_acticity("课程",true)  if  @temp_body==nil

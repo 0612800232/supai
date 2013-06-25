@@ -86,6 +86,7 @@ match '/homes/forums/:id/',
         get :apply
         get :forums
         get :goods
+        get :good
         get :articles
         get :read
       end
