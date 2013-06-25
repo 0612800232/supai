@@ -46,6 +46,7 @@ def articles
 
 
    def good
+     @forum = Forum.find_by_code("pro_info")
      @good = Good.find_by_id(params[:id])
    render "forums"
   end
