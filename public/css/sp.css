@@ -138,7 +138,8 @@ a:hover, a:active {}
 .pages a:hover{border-color: #FF9400;background: #FFBE94;color: #FF6400;}
 .pages span.nextprev{color: #FFE2C5;font-weight: bold;}
 .pages span.nextprev{border-color: #FFE2C5;color: #edb883;border: 1px solid;padding: 3px 5px 3px 5px;}
-
+.pages span.disabled{display:none;}
+.pages .current{display:none;}
 
 .box-2{ width:1100px; background:url(../images/bg15.png) 0 0 no-repeat; margin:0px auto 20px auto;}
 .box-2-left{ float:left; width:192px; display:inline; margin-left:80px; padding-top:100px; margin-right:30px;}
