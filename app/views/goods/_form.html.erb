@@ -57,14 +57,26 @@
             <label class="required" for="name">产品名称</label><br/>
             <%= f.text_field :name,:class=>"half" %>
           </p>
+
+           <p>
+            <label class="required" for="weight">标准重量</label><br/>
+            <%= f.text_field :weight,:class=>"half" %>
+          </p>
+           <p>
+            <label class="required" for="cuisines">菜系</label><br/>
+            <%= f.text_field :cuisines,:class=>"half" %>
+          </p>
+
+          <!--
            <p>
             <label class="required" for="amount">产品零售价金额</label><br/>
             <%= f.text_field :amount,:class=>"half" %>
           </p>
           <p>
             <label class="required" for="amount">产品成本金额</label><br/>
-            <%= f.text_field :amount,:class=>"half" %>
+            <%= f.text_field :cost,:class=>"half" %>
           </p>
+        -->
            <p>
             <label class="required" for="amount">产品配料</label><br/>
             <%= f.text_field :burden,:class=>"half" %>
@@ -78,8 +90,14 @@
             <%= f.text_field :makeing,:class=>"half" %>
           </p>
            <p>
-            <label class="required" for="desc">产品描述</label><br/>
+            <label class="required" for="desc">口味特色</label><br/>
            <%= f.text_area :desc,:cols=>"100",:rows =>"5"%>
+            
+          </p>
+
+            <p>
+            <label class="required" for="s_d">菜品特色</label><br/>
+           <%= f.text_area :s_d,:cols=>"100",:rows =>"5"%>
             
           </p>
            <p>

@@ -13,7 +13,7 @@
                    <div style="float:right">
                     <div style="float:left">
                       根据产品种类查找:
-              <select id=goods_type_id_" name="goods_type_id">
+              <select id="goods_type_id_" name="goods_type_id">
               <option value="">--请选择产品种类--</option>
               <%GoodsType.all.collect {|p| [ p.name, p.id ]}.each do |k,v|%>
                <option value="<%=v%>" <%= "selected" if params[:goods_type_id] ==v.to_s %>><%=k%></option>
@@ -36,8 +36,7 @@
               <th style="width: 170px;"><input type="checkbox" id="select_all" >新品推荐</th>
               <th style="width: 125px;">产品种类</th>
               <th style="width: 125px;">产品名称</th>
-              <th style="width: 125px;">产品金额</th>
-              <th style="width: 125px;">产品描述</th>
+              <th style="width: 125px;">产品重量</th>
                <th style="width: 175px;">产品浏览次数</th>
               <th style="width: 170px; ">编辑</th>
               <th style="width: 107px; ">删除</th>
@@ -50,8 +49,7 @@
                 <td style="width: 100px;"><input type="checkbox" value="<%=good.id%>" name="select_id[]" <%if good.is_new%> checked <%end %>>新品推荐</td>
                 <td><%= good.goods_type.name %></td>
                  <td><%= good.name %></td>
-                <td><%= good.amount %></td>
-                <td><%= good.desc %></td>
+                <td><%= good.weight %></td>
                 <td><%= good.read_num %></td>
                 <td><%= link_to '编辑', edit_good_path(good) %></td>
                 <td><%= link_to '删除', good, :confirm => '确定删除', :method => :delete %></td>
