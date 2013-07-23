@@ -8,5 +8,6 @@ class Good < ActiveRecord::Base
   validates_presence_of :cuisines,:message => "产品菜系不为空"
   validates_presence_of :burden,:message => "产品配料不为空"
    validates_presence_of :s_d,:message => "菜品特色不为空"
+    validates_presence_of :seasoning,:message => "产品调料表不为空"
 end
 
